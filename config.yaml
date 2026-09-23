@@ -1,0 +1,77 @@
+# OptionEdge configuration
+project_name: OptionEdge
+random_seed: 42
+
+data:
+  raw_root: data/raw/quantdata/raw/bhavcopy
+  processed_dir: data/processed
+  charts_dir: data/charts
+  # Full study window covered by NSE bhavcopy mirror (index + F&O)
+  start_date: "2021-01-01"
+  end_date: "2026-09-22"
+  symbols:
+    nifty: "NIFTY"
+    banknifty: "BANKNIFTY"
+  index_row_names:
+    nifty: "Nifty 50"
+    banknifty: "Nifty Bank"
+    vix: "India VIX"
+  risk_free_rate: 0.065          # 6.5% India risk-free (approx T-bill / repo)
+  lot_size:                       # index points P&L is primary; INR uses these
+    NIFTY: 75
+    BANKNIFTY: 35
+
+features:
+  lookback_lstm: 20               # sequence length for LSTM
+  chart_window: 60                # sessions rendered per chart image
+  technical:
+    rsi_periods: [7, 14]
+    ma_periods: [5, 10, 20, 50, 200]
+    vol_periods: [5, 10, 21]
+
+vision:
+  image_size: 128
+  patch_size: 16
+  vit_dim: 128
+  vit_depth: 4
+  vit_heads: 4
+  vit_mlp_ratio: 4.0
+  epochs: 10
+  batch_size: 16
+  lr: 0.0003
+  weight_decay: 0.01
+  # HuggingFace-style architecture name used in reports
+  model_name: "optionedge/vit-tiny-chart-128"
+
+tabular:
+  rf:   {n_estimators: 400, max_depth: 8, min_samples_leaf: 5, learning_rate: null}
+  xgb:  {n_estimators: 400, max_depth: 4, learning_rate: 0.05, subsample: 0.8,
+         colsample_bytree: 0.8, min_child_weight: 3, reg_lambda: 1.5}
+  lstm: {units: 64, dropout: 0.25, epochs: 18, batch_size: 32, lr: 0.001}
+  stacker: "logistic"             # logistic | xgb
+
+split:
+  # Chronological holdout used for the headline ablation + backtest
+  test_fraction: 0.20
+  calib_fraction: 0.10            # slice before test used for threshold calibration
+  # Walk-forward settings (time-ordered CV)
+  walkforward_folds: 5
+  walkforward_test_days: 63       # one quarter per fold
+
+signals:
+  # Probability thresholds: p_up >= hi -> Buy CE ; p_up <= 1-hi -> Buy PE
+  confidence_hi: 0.57
+  confidence_lo: 0.43
+
+backtest:
+  costs_points: 1.0               # round-trip brokerage in index option points
+  slippage_points: 0.5
+  stop_loss_pct: 0.50             # exit option if premium falls below -50%
+  take_profit_pct: 1.5            # exit option if premium gains +150%
+
+paths:
+  artifacts: artifacts
+  metrics: artifacts/metrics
+  plots: artifacts/plots
+  models: artifacts/models
+  db: artifacts/optionedge.db

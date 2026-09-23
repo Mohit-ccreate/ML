@@ -1,0 +1,13 @@
+model,modality,accuracy,validation
+"Sherasiya 2025 (options-chain LSTM, random split)",tabular,0.901,random split (paper)
+"Sherasiya 2025 (XGBoost, random split)",tabular,0.892,random split (paper)
+"Sherasiya 2025 (Random Forest, random split)",tabular,0.874,random split (paper)
+Kayit & Ismail 2025 (hybrid voting ensemble),tabular,0.958,paper protocol
+Kpereobong et al. 2025 (ViT + TFT),multimodal(vision+price),0.96,paper protocol
+Weinberg 2025 (realistic validation note),mixed,0.6014,realistic
+OptionEdge — Tabular holdout,options-chain + technicals,0.5294117647058824,holdout 20%
+OptionEdge — ViT holdout,candlestick ViT,0.53125,holdout 20%
+OptionEdge — Fused holdout,ViT + tabular ensemble,0.5349264705882353,holdout 20%
+OptionEdge — Tabular walk-forward,options-chain + technicals,0.5190476190476191,walk-forward (refit each fold)
+OptionEdge — ViT walk-forward,candlestick ViT,0.5301587301587302,walk-forward (refit each fold)
+OptionEdge — Fused walk-forward,ViT + tabular ensemble,0.5206349206349207,walk-forward (refit each fold)

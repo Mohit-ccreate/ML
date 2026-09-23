@@ -1,0 +1,28 @@
+{
+  "n_trades": 140,
+  "win_rate": 0.37142857142857144,
+  "avg_net_points": -35.10285714285714,
+  "total_net_points": -4914.4,
+  "total_net_inr": -282562.0,
+  "profit_factor": 0.5200710947914274,
+  "avg_confidence": 0.7192214613362662,
+  "by_symbol": {
+    "BANKNIFTY": {
+      "n": 67,
+      "win_rate": 0.4925373134328358,
+      "total_points": -2150.4500000000007
+    },
+    "NIFTY": {
+      "n": 73,
+      "win_rate": 0.2602739726027397,
+      "total_points": -2763.95
+    }
+  },
+  "exit_reasons": {
+    "close": 94,
+    "stop": 38,
+    "target": 8
+  },
+  "max_drawdown_points": -4891.800000000003,
+  "sharpe_per_trade": -0.22318121840064714
+}

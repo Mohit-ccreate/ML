@@ -1,0 +1,85 @@
+{
+  "tabular": {
+    "n": 544,
+    "accuracy": 0.5294117647058824,
+    "baseline_majority": 0.53125,
+    "edge_vs_baseline": -0.0018382352941176405,
+    "precision": 0.5379310344827586,
+    "recall": 0.8096885813148789,
+    "f1": 0.6464088397790055,
+    "brier": 0.2578306260434082,
+    "roc_auc": 0.5185019336454305,
+    "pr_auc": 0.5548680243880849,
+    "confusion_matrix": [
+      [
+        54,
+        201
+      ],
+      [
+        55,
+        234
+      ]
+    ],
+    "modality": "options-chain + technicals",
+    "validation": "holdout 20%"
+  },
+  "vision_vit": {
+    "n": 544,
+    "accuracy": 0.53125,
+    "baseline_majority": 0.53125,
+    "edge_vs_baseline": 0.0,
+    "precision": 0.53125,
+    "recall": 1.0,
+    "f1": 0.6938775510204082,
+    "brier": 0.24887612263242312,
+    "roc_auc": 0.5099124771015673,
+    "pr_auc": 0.5416777942033983,
+    "confusion_matrix": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        289
+      ]
+    ],
+    "modality": "candlestick ViT",
+    "validation": "holdout 20%"
+  },
+  "fused": {
+    "n": 544,
+    "accuracy": 0.5349264705882353,
+    "baseline_majority": 0.53125,
+    "edge_vs_baseline": 0.003676470588235281,
+    "precision": 0.5398230088495575,
+    "recall": 0.8442906574394463,
+    "f1": 0.6585695006747638,
+    "brier": 0.26045174816922406,
+    "roc_auc": 0.5193839473505666,
+    "pr_auc": 0.5472602802756888,
+    "confusion_matrix": [
+      [
+        47,
+        208
+      ],
+      [
+        45,
+        244
+      ]
+    ],
+    "modality": "ViT + tabular ensemble",
+    "validation": "holdout 20%"
+  },
+  "fused_selective": {
+    "coverage": 0.25919117647058826,
+    "n_selected": 141,
+    "selective_accuracy": 0.574468085106383,
+    "hi": 0.68,
+    "lo": 0.32
+  },
+  "thresholds": {
+    "hi": 0.68,
+    "lo": 0.32
+  }
+}
