@@ -1,0 +1,30 @@
+# Data - too large for git
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.pkl
+*.h5
+
+# Models
+models/*.pkl
+models/*.joblib
+models/*.pt
+*.model
+
+# Env
+.env
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.conda/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / API keys
+config/secrets.json

@@ -1,0 +1,33 @@
+# Core
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+scipy==1.12.0
+
+# Data Fetching
+yfinance==0.2.40
+nsepython==2.9
+requests==2.32.3
+
+# ML Models
+xgboost==2.1.1
+lightgbm==4.5.0
+catboost==1.2.7
+
+# Deep Learning (optional, for LSTM volatility)
+torch==2.3.1
+ta==0.11.0
+
+# TA & Features
+pandas-ta==0.3.14b0
+
+# Backtest & Vis
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.22.0
+jupyter==1.1.1
+tqdm==4.66.4
+
+# Utils
+python-dotenv==1.0.1
+joblib==1.4.2
