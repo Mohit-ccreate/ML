@@ -1,0 +1,75 @@
+{
+  "tabular": {
+    "n": 630,
+    "accuracy": 0.5190476190476191,
+    "precision": 0.5457227138643068,
+    "recall": 0.5538922155688623,
+    "f1": 0.549777117384844,
+    "brier": 0.25959002694475125,
+    "roc_auc": 0.5141709823596051,
+    "pr_auc": 0.5464151387790912,
+    "confusion_matrix": [
+      [
+        142,
+        154
+      ],
+      [
+        149,
+        185
+      ]
+    ],
+    "modality": "options-chain + technicals",
+    "validation": "walk-forward (refit each fold)"
+  },
+  "vision_vit": {
+    "n": 630,
+    "accuracy": 0.5301587301587302,
+    "precision": 0.5301587301587302,
+    "recall": 1.0,
+    "f1": 0.6929460580912863,
+    "brier": 0.2494545340431484,
+    "roc_auc": 0.5052395209580838,
+    "pr_auc": 0.5411927611244929,
+    "confusion_matrix": [
+      [
+        0,
+        296
+      ],
+      [
+        0,
+        334
+      ]
+    ],
+    "modality": "candlestick ViT",
+    "validation": "walk-forward (refit each fold)"
+  },
+  "fused": {
+    "n": 630,
+    "accuracy": 0.5206349206349207,
+    "precision": 0.5423280423280423,
+    "recall": 0.6137724550898204,
+    "f1": 0.5758426966292135,
+    "brier": 0.2608798935591599,
+    "roc_auc": 0.5131493769218319,
+    "pr_auc": 0.5517659821294774,
+    "confusion_matrix": [
+      [
+        123,
+        173
+      ],
+      [
+        129,
+        205
+      ]
+    ],
+    "modality": "ViT + tabular ensemble",
+    "validation": "walk-forward (refit each fold)"
+  },
+  "fused_selective": {
+    "coverage": 0.6301587301587301,
+    "n_selected": 397,
+    "selective_accuracy": 0.5188916876574308,
+    "hi": 0.57,
+    "lo": 0.43
+  }
+}

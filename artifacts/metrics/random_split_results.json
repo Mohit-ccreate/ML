@@ -1,0 +1,26 @@
+{
+  "random_split_80_20": {
+    "n": 545,
+    "accuracy": 0.5467889908256881,
+    "baseline_majority": 0.5027522935779817,
+    "edge_vs_baseline": 0.044036697247706424,
+    "precision": 0.5436893203883495,
+    "recall": 0.6131386861313869,
+    "f1": 0.5763293310463122,
+    "brier": 0.24902248251797118,
+    "roc_auc": 0.5698009534839874,
+    "pr_auc": 0.5683782470730198,
+    "confusion_matrix": [
+      [
+        130,
+        141
+      ],
+      [
+        106,
+        168
+      ]
+    ],
+    "modality": "tabular ensemble (RF+XGB)",
+    "validation": "random split (paper protocol) \u2014 OPTIMISTIC"
+  }
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "symbol":"BANKNIFTY",
+    "date":"2026-07-10",
+    "p_up_fused":0.6459782822,
+    "p_up_tabular":0.5822117588,
+    "p_up_vit":0.5332407355,
+    "signal":"NO_TRADE",
+    "confidence":0.6459782822,
+    "thresholds":{
+      "hi":0.68,
+      "lo":0.32
+    }
+  },
+  {
+    "symbol":"NIFTY",
+    "date":"2026-07-10",
+    "p_up_fused":0.80171972,
+    "p_up_tabular":0.7677102709,
+    "p_up_vit":0.5330512524,
+    "signal":"BUY_CE",
+    "confidence":0.80171972,
+    "thresholds":{
+      "hi":0.68,
+      "lo":0.32
+    }
+  }
+]
