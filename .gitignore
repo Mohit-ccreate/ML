@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Datasets — download with the instructions in each project's README
+**/data/
+
+# Training runs (checkpoints, logs) — small plots/metrics are copied to assets/ instead
+**/runs/
+*.pt
+*.pth
+*.ckpt
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
