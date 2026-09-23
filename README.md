@@ -5,7 +5,7 @@ with its own README, requirements and tests.
 
 | Project | Task | Stack | Result |
 |---------|------|-------|--------|
-| [`fashion-mnist-cnn/`](fashion-mnist-cnn/) | Image classification (10 clothing classes, 28×28 grayscale) | PyTorch, torchvision, scikit-learn | see project README |
+| [`fashion-mnist-cnn/`](fashion-mnist-cnn/) | Image classification (10 clothing classes, 28×28 grayscale) | PyTorch, torchvision, scikit-learn | **92.4 %** test accuracy (CNN) vs 86.0 % (MLP baseline) |
 
 ## Conventions
 

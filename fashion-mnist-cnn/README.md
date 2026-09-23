@@ -9,9 +9,30 @@ CLI to classify your own photos.
 <!-- RESULTS:BEGIN -->
 | Model | Params | Epochs | Val acc | **Test acc** | Macro F1 | Train time (2-core CPU) |
 |-------|-------:|-------:|--------:|-------------:|---------:|------------------------:|
-| `cnn` (SimpleCNN) | 584k | 8 | — | — | — | — |
-| `mlp` (baseline)  | 535k | 8 | — | — | — | — |
+| `cnn` (SimpleCNN) | 584k | 8 | 92.72 % | **92.42 %** | 0.9241 | 29 min |
+| `mlp` (baseline) | 535k | 8 | 86.57 % | **86.00 %** | 0.8586 | 2 min |
 <!-- RESULTS:END -->
+
+Both models use the identical data split, optimiser and schedule — the only
+difference is the architecture, so the ~6.4-point gap is what the
+convolutional inductive bias buys on this task. (Copies of the plots and
+metrics live in [`assets/`](assets/); `runs/` itself is git-ignored.)
+
+| Training curves | Confusion matrix (test set) |
+|---|---|
+| ![curves](assets/cnn_curves.png) | ![confusion matrix](assets/cnn_confusion_matrix.png) |
+
+Validation accuracy tracks slightly *above* training accuracy throughout —
+expected here, because the training numbers are measured with dropout active
+and on augmented images, while validation is clean. The curves are still
+rising gently at epoch 8, so more epochs would squeeze out a little more.
+
+**Where the errors are.** Nine of the ten classes score 88–99 %; *Shirt*
+is the outlier at 77 % recall, and its confusions are almost entirely with
+T-shirt/top (10 %), Coat (7 %) and Pullover (4 %). The most confident
+mistakes make it clear why — many are genuinely ambiguous at 28×28:
+
+![most confident mistakes](assets/cnn_mistakes.png)
 
 ## Project layout
 
